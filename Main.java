@@ -15,16 +15,24 @@ public class Main {
     public static void main(String[] arg){
         int i = new Random().nextInt(2000);
         int n = msBit(i);
-        int[] m1 = new int[getSize(i, n)];
-        m1 = multNums(i, n, getSize(i, n));
-        int[] m2 = new int[getSize(i, n)];
-        m2 = aliqNums(i, n, getSize(i, n));
+        int size = getSize(i, n);
+        int[] m1 = multNums(i, n, size);
+        int[] m2 = aliqNums(i, n, size);
 
-        System.out.println(i);
-        System.out.println(n);
-        System.out.println(m1);
-        System.out.println(m2);
-    }
+    //     System.out.println(i);
+    //     System.out.println(n);
+    //     System.out.println();
+
+    //     for (int j : m1) {
+    //         System.out.println(j);
+    //     }
+
+    //     System.out.println();
+        
+    //     for (int j : m2) {
+    //         System.out.println(j);
+    //     }
+    // }
 
     static int msBit(Integer i){
         int msb = Integer.highestOneBit(i);
@@ -33,7 +41,7 @@ public class Main {
 
     static int getSize(Integer i, Integer n){
         int size = 0;
-        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+        for (int j = i; j < Short.MAX_VALUE; j++){
             if (j % n == 0){
                 size++;
             }
@@ -44,7 +52,7 @@ public class Main {
     static int[] multNums(Integer i, Integer n, Integer size){
         int[] multNums = new int[size];
         int k = 0;
-        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+        for (int j = i; j < Short.MAX_VALUE; j++){
             if (j % n == 0){
                 multNums[k] = j;
                 k++;
@@ -56,7 +64,7 @@ public class Main {
     static int[] aliqNums(Integer i, Integer n, Integer size){
         int[] aliqNums = new int[size];
         int k = 0;
-        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+        for (int j = i; j < Short.MAX_VALUE; j++){
             if (j % n != 0){
                 aliqNums[k] = j;
                 k++;
