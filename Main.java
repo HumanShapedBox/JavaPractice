@@ -16,7 +16,9 @@ public class Main {
         int i = new Random().nextInt(2000);
         int n = msBit(i);
         int[] m1 = new int[getSize(i, n)];
+        m1 = multNums(i, n, getSize(i, n));
         int[] m2 = new int[getSize(i, n)];
+        m2 = aliqNums(i, n, getSize(i, n));
 
         System.out.println(i);
         System.out.println(n);
@@ -37,14 +39,30 @@ public class Main {
             }
         }
         return size;
-    }       
-        // int[] multNums = new int[size];
-        // for (int j = i; j < (Short.MAX_VALUE - i); j++){
-        //     if (j % n == 0){
-        //         multNums[j]
-        //     }
-        // }
-        // return multNums[]
+    }
+    
+    static int[] multNums(Integer i, Integer n, Integer size){
+        int[] multNums = new int[size];
+        int k = 0;
+        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+            if (j % n == 0){
+                multNums[k] = j;
+                k++;
+            }
+        }
+        return multNums;
+    }
 
+    static int[] aliqNums(Integer i, Integer n, Integer size){
+        int[] aliqNums = new int[size];
+        int k = 0;
+        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+            if (j % n != 0){
+                aliqNums[k] = j;
+                k++;
+            }
+        }
+        return aliqNums;
+    }
 
 }
