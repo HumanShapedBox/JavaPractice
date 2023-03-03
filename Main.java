@@ -9,6 +9,9 @@
 
 package HW;
 
-public class HW_1 {
-    
+import java.util.Random;
+
+public class Main {
+    int i;
+
 }
