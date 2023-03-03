@@ -19,20 +19,20 @@ public class Main {
         int[] m1 = multNums(i, n, size);
         int[] m2 = aliqNums(i, n, size);
 
-    //     System.out.println(i);
-    //     System.out.println(n);
-    //     System.out.println();
+        System.out.println(i);
+        System.out.println(n);
+        System.out.println();
 
-    //     for (int j : m1) {
-    //         System.out.println(j);
-    //     }
+        for (int j : m1) {
+            System.out.println(j);
+        }
 
-    //     System.out.println();
+        System.out.println();
         
-    //     for (int j : m2) {
-    //         System.out.println(j);
-    //     }
-    // }
+        for (int j : m2) {
+            System.out.println(j);
+        }
+    }
 
     static int msBit(Integer i){
         int msb = Integer.highestOneBit(i);
