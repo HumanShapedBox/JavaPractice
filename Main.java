@@ -6,12 +6,45 @@
 Пункты реализовать в методе main
 Пункты реализовать в разных методах
  */
-
 package HW;
 
 import java.util.Random;
 
 public class Main {
-    int i;
+
+    public static void main(String[] arg){
+        int i = new Random().nextInt(2000);
+        int n = msBit(i);
+        int[] m1 = new int[getSize(i, n)];
+        int[] m2 = new int[getSize(i, n)];
+
+        System.out.println(i);
+        System.out.println(n);
+        System.out.println(m1);
+        System.out.println(m2);
+    }
+
+    static int msBit(Integer i){
+        int msb = Integer.highestOneBit(i);
+        return msb;
+    }
+
+    static int getSize(Integer i, Integer n){
+        int size = 0;
+        for (int j = i; j < (Short.MAX_VALUE - i); j++){
+            if (j % n == 0){
+                size++;
+            }
+        }
+        return size;
+    }       
+        // int[] multNums = new int[size];
+        // for (int j = i; j < (Short.MAX_VALUE - i); j++){
+        //     if (j % n == 0){
+        //         multNums[j]
+        //     }
+        // }
+        // return multNums[]
+
 
 }
