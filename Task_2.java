@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Task_2 {
     
     public static void main(String[] args){
-
+        // Первый пункт домашнего задания
         String text = "Здравствуйте дорогой Мартин Алексеич!\n "
                     + "Пишу вам сразу по приезду, прямо вот только что вошёл и сел писать. "
                     + "Тут всё у нас хорошо, весна вовсю, снег ещё не сошёл, но вроде бы сходит, "
@@ -39,13 +39,14 @@ public class Task_2 {
                     + "Вы мне пишете чаще, и передавайте всем приветы.\n"
                     + "Так что жду от вас писем и Ц.У. До свидания.";
 
-        //System.out.println(text);
+        //System.out.println(text); // Для удобства проверки скрыла
         String word = findInText(text);
         System.out.println(text.contains(word));
         if (text.contains(word) == true){
             System.out.println(text.indexOf(word)); 
         }
 
+        // Второй пункт домашнего задания
         String firstWord = new StringBuilder(inputWord()).reverse().toString();
         String secondWord = inputWord();
         if (firstWord.contains(secondWord)){
@@ -55,15 +56,39 @@ public class Task_2 {
             System.out.println("Данные слова или строки не являются палиндромами");
         }
 
+        // Третий пункт домашнего задания
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Напишите слово или строку текста, чтобы мы её развернули: ");
         String userLine = iScanner.nextLine();
         String reverseLine = recurtion(userLine, userLine.length() - 1);
         System.out.println(reverseLine);
 
+        
+        // Четвёртый пункт домашнего задания
+        int a = inputNum();
+        int b = inputNum();
+        StringBuilder sum = new StringBuilder().append(a).append(" + ").append(b).append(" = ");
+        System.out.println(sum.toString() + (a + b));
+        StringBuilder div = new StringBuilder().append(a).append(" - ").append(b).append(" = ");
+        System.out.println(div.toString() + (a - b));
+        StringBuilder mult = new StringBuilder().append(a).append(" * ").append(b).append(" = ");
+        System.out.println(mult.toString() + (a * b));
+
+        //  Пятый пункт домашнего задания
+        int i = sum.indexOf("=");
+        sum.deleteCharAt(i);
+        sum.insert(i, "равно");
+        System.out.println(sum.toString() + (a + b));
+
+
+        //  Шестой пункт домашнего задания
+
+        sum.toString().replace("=", "равно");
+        System.out.println(sum.toString() + (a + b));
+
         iScanner.close();
     }
-
+// Метод для первого пункта домашнего задания
     public static String findInText(String line){
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите слово, которое хотите найти: ");
@@ -71,7 +96,7 @@ public class Task_2 {
      //   iScanner.close();
         return str;
     }
-
+// Метод для получения данных второго пункта домашнего задания
     public static String inputWord() {
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите слово или строку: ");
@@ -79,11 +104,19 @@ public class Task_2 {
      //   iScanner.close();
         return word;
     }
-
+// Метод для третьего пункта домашнего задания
     public static String recurtion(String userData, int index) {
         if (index == 0)
             return userData.charAt(index) + "";
         char letter = userData.charAt(index);  
         return letter + recurtion(userData, index - 1);
+    }
+// Метод для получения данных четвёртого пункта домашнего задания
+    public static int inputNum() {
+        Scanner iScanner = new Scanner(System.in);
+        System.out.printf("Введите число: ");
+        int number = iScanner.nextInt();
+    //   iScanner.close();
+        return number;
     }
 }
