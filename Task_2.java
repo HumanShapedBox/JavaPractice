@@ -1,5 +1,6 @@
 package HW;
 import java.util.Scanner;
+//import java.util.Random;
 
 public class Task_2 {
     
@@ -44,14 +45,45 @@ public class Task_2 {
         if (text.contains(word) == true){
             System.out.println(text.indexOf(word)); 
         }
-         
+
+        String firstWord = new StringBuilder(inputWord()).reverse().toString();
+        String secondWord = inputWord();
+        if (firstWord.contains(secondWord)){
+            System.out.println("Данные слова или строки являются палиндромами");
+        }
+        else{
+            System.out.println("Данные слова или строки не являются палиндромами");
+        }
+
+        Scanner iScanner = new Scanner(System.in);
+        System.out.printf("Напишите слово или строку текста, чтобы мы её развернули: ");
+        String userLine = iScanner.nextLine();
+        String reverseLine = recurtion(userLine, userLine.length() - 1);
+        System.out.println(reverseLine);
+
+        iScanner.close();
     }
 
     public static String findInText(String line){
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите слово, которое хотите найти: ");
         String str = iScanner.nextLine();
-        iScanner.close();
+     //   iScanner.close();
         return str;
+    }
+
+    public static String inputWord() {
+        Scanner iScanner = new Scanner(System.in);
+        System.out.printf("Введите слово или строку: ");
+        String word = iScanner.nextLine().replaceAll(" ", "");
+     //   iScanner.close();
+        return word;
+    }
+
+    public static String recurtion(String userData, int index) {
+        if (index == 0)
+            return userData.charAt(index) + "";
+        char letter = userData.charAt(index);  
+        return letter + recurtion(userData, index - 1);
     }
 }
