@@ -3,7 +3,7 @@ import java.util.Scanner;
 //import java.util.Random;
 
 public class Task_2 {
-    
+    static Scanner iScanner = new Scanner(System.in);
     public static void main(String[] args){
         // Первый пункт домашнего задания
         String text = "Здравствуйте дорогой Мартин Алексеич!\n "
@@ -57,7 +57,6 @@ public class Task_2 {
         }
 
         // Третий пункт домашнего задания
-        Scanner iScanner = new Scanner(System.in);
         System.out.printf("Напишите слово или строку текста, чтобы мы её развернули: ");
         String userLine = iScanner.nextLine();
         String reverseLine = recurtion(userLine, userLine.length() - 1);
@@ -90,18 +89,14 @@ public class Task_2 {
     }
 // Метод для первого пункта домашнего задания
     public static String findInText(String line){
-        Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите слово, которое хотите найти: ");
         String str = iScanner.nextLine();
-     //   iScanner.close();
         return str;
     }
 // Метод для получения данных второго пункта домашнего задания
     public static String inputWord() {
-        Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите слово или строку: ");
         String word = iScanner.nextLine().replaceAll(" ", "");
-     //   iScanner.close();
         return word;
     }
 // Метод для третьего пункта домашнего задания
@@ -113,10 +108,8 @@ public class Task_2 {
     }
 // Метод для получения данных четвёртого пункта домашнего задания
     public static int inputNum() {
-        Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите число: ");
         int number = iScanner.nextInt();
-    //   iScanner.close();
         return number;
     }
 }
